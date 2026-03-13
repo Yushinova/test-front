@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --breakpoint-xs: 321px;
+  --breakpoint-sm: 376px;
+  --breakpoint-md: 650px;
+  --breakpoint-lg: 1300px;
+  --breakpoint-xl: 1920px;
+  /* 🎨 Основные цвета */
+  --color-primary: #232829; /* Основной цвет страницы */
+  --color-offer-green: #1D5B43; /* Цвет плашки Offer */
+  
+  /* 🟥 Фоны */
+  --color-bg-sale: #FD5656; /* Фон карточек Sale */
+  --color-bg-card: #313637; /* Фон карточек */
+  --color-bg-page: #232829; /* фон всей страницы (берем из primary) */
+  --color-bg-btn: #FDB056;
+  
+  /* 🔲 Границы */
+  --color-border-grey: #484D4E; /* Обводка карточек серая */
+  --color-border-hit: #FDB056; /* Границы карточки хит */
+  --color-border-teg: #DCDCDC; /* Границы тег светло-серые */
+  --color-border-guarantee: #81FE95; /* Границы тег светло-зеленые */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  
+  /* 📝 Тексты */
+  --color-text-body: #FFFFFF; /* Основной текст */
+  --color-text-muted: #919191; /* Серый для подписей */
+  --color-text-orange: #FDB056; /* Текст оранжевый */
+  --color-text-tag: #81FE95; /* Светло-зеленый */
+  --color-text-content: #DCDCDC; /* Текст низ */
+  --color-text-btn: #191E1F; /* Текст кнопки */
+  --color-text-consent: #CDCDCD; /* Текст согласие */
+  --color-text-guarantee: #DCDCDC; /* Текст гарантии */
+  --color-text-time-y: #FFBB00; /* Текст желтый тайминг */
+  --color-text-time-r: #FF4E4E; /* Текст красный тайминг */
+  --color-text-bue: #9B9B9B;
+  
+  /* 📝 Шрифты - теперь можно выбирать */
+  --font-montserrat: var(--font-montserrat);
+  --font-raleway: var(--font-raleway);
+  --font-sans: var(--font-montserrat), system-ui, sans-serif; /* Основной шрифт */
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: black;
+  color: var(--color-text-body);
+  font-family: var(--font-sans); /* По умолчанию Montserrat */
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE и Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
 }
